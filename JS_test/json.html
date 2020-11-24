@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON</title>
+	<script type="text/javascript">
+		let student = {name: 'ma ma',
+						age: 25};
+
+		// change to json format
+		let jsonStr = JSON.stringify(student);
+		console.log(jsonStr);
+		console.log(typeof jsonStr);
+
+		// set data to website temporary storage(localStorage)
+		localStorage.setItem('mykey',jsonStr);
+
+		let data = localStorage.getItem('mykey');
+
+		// JSON.parse => change json format to original format
+		console.log(JSON.parse(data));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

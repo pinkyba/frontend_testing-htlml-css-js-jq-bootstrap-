@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Let, Const</title>
+</head>
+<body>
+	<script type="text/javascript">
+		const name = "Htet Htet";
+
+		let age = 23;
+		age = age + 1;
+		console.log(age);
+
+		let fruits = ['papaya','mango','apple'];
+		console.log(fruits);
+
+		// for loop
+		for (let i = 0; i < fruits.length; i++) {
+			console.log(fruits[i]);
+		}
+
+
+
+		// for of loop
+		let student = [
+						{name: 'Khin', age: 24},
+						{name: 'Kyaw',age: 26},
+						{name: 'Su', age: 22}
+					];
+
+		student.push({name: 'Kyi', age: 22});
+		console.log(student)
+		
+		for (let val of student){
+			console.log(val.name);
+			console.log(val.age);
+		}
+
+
+		// Math object
+		let num = Math.random(1,20)*10;
+		console.log(num.toFixed(0));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document Object Model(DOM)</title>
+
+	<script type="text/javascript">
+		let element = document.getElementsByTagName('h1');
+		console.log(element);
+
+		//console.log(element[0].innerHTML); //getElementsByTagName
+
+		// let el = document.querySelector('#myh1');
+		// console.log(el);
+
+		function showTable() {
+		// Data from backend
+		let data = [
+				{name: 'Htet', age: 23},
+				{name: 'Aye', age: 23},
+				{name: 'Kyaw', age: 23}
+		];
+
+		let tbody = document.querySelector('#tbody');
+		let mytr = '';
+		let i = 1;
+		for(let row of data){
+			mytr += `<tr>
+							<td>${i++}</td>
+							<td>${row.name}</td>
+							<td>${row.age}</td>
+						</tr>`;
+		}
+		tbody.innerHTML = mytr;
+	}
+		
+	</script>
+
+</head>
+<body>
+	<h1 id="myh1"> Hello DOM </h1>
+
+	<h2 class="myh1">Hello H2 tag</h2>
+	<p class="myh1">hello hello heoo</p>
+
+	<img src="images/bomb.gif" alt='One image' id="myimg">
+	<a href="#">A tag</a>
+
+	<input type="text" name="" id="name" value="Htet">
+
+	<button onclick="showTable()" type="button"> Show Data</button>
+		
+	<table border="1" cellspacing="0px" cellpadding="10px">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Name</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody id="tbody">
+			
+		</tbody>
+		
+	</table>
+
+
+	<script type="text/javascript">
+		//alert('OK footer');
+		let element1 = document.getElementById('myh1');
+		// console.log(element1);
+		console.log(element1.innerHTML);
+
+
+		let el2 = document.querySelectorAll('.myh1'); // display Notelist[]
+		console.log(el2);
+		console.log(el2[0].innerHTML);
+		console.log(el2[1].innerHTML);
+
+		el2[1].style.color = 'red';
+
+
+		let el = document.querySelector('#myh1'); // display one element
+		console.log(el);
+		console.log(el.innerHTML);
+
+		el.innerHTML = "<i>Hello Dom with Strong tag </i>" // update value Hello DOM in h1 tag 
+
+		
+
+		//console.log(element[0].innerHTML); //getElementsByTagName
+
+
+
+		let el4 = document.querySelector('#myimg');
+		console.log(el4.src);
+
+		el4.width = 200;
+		el4.style.display = "block";
+
+
+		let el5 = document.querySelector('#name');
+		console.log(el5.value);
+
+	</script>
+
+</body>
+</html>

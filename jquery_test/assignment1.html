@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery5</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#register").click(function(){
+				var name = $('#name').val();
+				var address = $('#address').val();
+				var pass = $('#pass').val();
+				var confirmpass = $('#confirmpass').val();
+
+				if(pass == confirmpass){
+					alert("Registration Success!!");
+				}else{
+					alert("Registration fail!!");
+				}
+
+			})
+		})
+	</script>
+</head>
+<body>
+	<h3>Register Form</h3>
+	Enter name: <input type="text" name="" id="name">
+	<br><br>
+	Enter address: <input type="text" name="" id="address"><br><br>
+	Enter password: <input type="password" name="" id="pass"><br><br>
+	Enter confirm password: <input type="password" name="" id="confirmpass"><br><br>
+	<button id="register">Register</button>
+
+	
+
+</body>
+</html>

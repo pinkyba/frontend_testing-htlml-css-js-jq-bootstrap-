@@ -1,0 +1,119 @@
+.center {
+  margin-left: 400px;
+  margin-top: 140px;
+  width: 40%;
+  height: auto;
+  padding: 10px;
+}
+#letter{
+	margin-left: 140px;
+}
+#letter1{
+	font-size: 90px;
+	font-weight: bold;
+	color: #616BFF;
+	font-family: HelveticaNeue,Arial,'Noto Sans Myanmar UI',sans-serif;
+}
+#letter2{
+	font-size: 90px;
+	font-weight: bold;
+	color: #F0480B;
+	font-family: HelveticaNeue,Arial,'Noto Sans Myanmar UI',sans-serif;
+}
+#letter3{
+	font-size: 90px;
+	font-weight: bold;
+	color: orange;
+	font-family: HelveticaNeue,Arial,'Noto Sans Myanmar UI',sans-serif;
+}
+#letter4{
+	font-size: 90px;
+	font-weight: bold;
+	color: #616BFF;
+	font-family: HelveticaNeue,Arial,'Noto Sans Myanmar UI',sans-serif;
+}
+#letter5{
+	font-size: 90px;
+	font-weight: bold;
+	color: #30B906;
+	font-family: HelveticaNeue,Arial,'Noto Sans Myanmar UI',sans-serif;
+}
+#letter6{
+	font-size: 90px;
+	font-weight: bold;
+	color: #F0480B;
+	font-family: HelveticaNeue,Arial,'Noto Sans Myanmar UI',sans-serif;
+}
+
+
+.input_box{
+	position: relative;
+	width:95%;
+}
+.input_box input[type=text]{
+  width: 95%;
+  height: 45px;
+  padding-left: 40px;
+  margin-left: 40px;
+  margin-top: 40px;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  color: rgba(0,0,0,.87);
+  font-size: 18px;
+  outline: none;
+}
+
+.input_box input[type=text]:hover{
+  box-shadow: 2px 0px 0px 2px #f2f2f2;
+}
+.input_box img{
+	position: absolute;
+	margin-left: 50px;
+	top: 52px;
+}
+
+
+
+#btn2{
+	margin-left: 150px;
+  	margin-top: 35px;
+}
+#bottom{
+	margin-left: 200px;
+  	margin-top: 30px;
+}
+#bottom1{
+	color: black;
+	font-size: 19px;
+}
+#bottom2{
+	color: darkblue;
+	font-size: 17px;
+}
+input[type=submit]{
+	width: 150px;
+	height: 40px;
+	border: 1px solid #f2f2f2;
+	border-radius: 6px;
+	margin-left: 10px;
+	color: #5F6368;
+	font-size: 16px;
+	font-family: HelveticaNeue,Arial,'Noto Sans Myanmar UI',sans-serif;
+	background-color: #f2f2f2;
+	outline: none;
+}
+input[type=submit]:hover{
+	border: 1px solid lightgray;
+	color: black;
+	font-size: 16px;
+	background-color: lightgray transparent;
+	outline: none;
+}
+input[type=submit]:active{	
+	border: 1px solid blue;
+}
+
+a:hover{
+	color: darkblue;
+	font-size: 17px;
+}

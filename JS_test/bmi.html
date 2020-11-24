@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bmi</title>
+	<script type="text/javascript">
+		
+	</script>
+	<style type="text/css">
+		.error{
+	display:none;
+	}
+	</style>
+	
+</head>
+<body>
+	<form action="" method="" onsubmit="return calc()">
+	<fieldset>
+		
+		<legend>Height</legend>
+		<label>Feet: </label>
+		<input type="number" name="feet" id="feet">
+		<small class="error">Feet must be greater than 1.</small>
+		<label>Inches: </label>
+		<input type="number" name="inches" id="inches">
+	</fieldset>
+
+	<label>Weight (lb): </label>
+		<input type="number" name="weight" required="" id="pound">
+
+		<button>Calculate</button>
+	</form>
+	<p id="result"></p>
+
+		<script type="text/javascript">
+			function calc() {
+				let feet = parseInt(document.querySelector('#feet').value);
+				let inch = parseInt(document.querySelector('#inches').value);
+				let pound = parseInt(document.querySelector('#pound').value);
+
+				let result = document.querySelector('#result');
+				
+				let errors = document.querySelector('.error');
+				
+				if(feet<=0){
+					errors[0].style.display ="inline";
+					errors[0].style.color = "red";
+				}
+				
+					result.innerHTML = pound;
+					return false;
+			}
+
+		</script>
+</body>
+</html>

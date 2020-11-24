@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini Calculator</title>
+
+	<script type="text/javascript">
+
+		function calc(calcFunc) {
+			var num1 = parseInt(document.myForm.num1.value);
+			var num2 = parseInt(document.myForm.num2.value);
+
+
+			if(calcFunc == 'add'){
+				var result = num1+num2;
+			}
+			else if(calcFunc == 'substract'){
+				result = num1-num2;
+			}
+			else if(calcFunc == 'multiply'){
+				result = num1*num2;
+			}
+			else{
+				result = num1/num2;
+			}
+			document.myForm.result.value = result;
+
+			let show = document.querySelector('#showP');
+			show.innerHTML = `<i>Sum of numbers: ${total} </i>`
+		}
+
+
+		
+	</script>
+
+</head>
+<body>
+	<form method="" action="" name="myForm">
+		<label for="num1"> Num1: </label>
+		<input type="number" name="num1" id="num1"><br><br>
+
+		<label for="num2"> Num2: </label>
+		<input type="number" name="num2" id="num2"><br><br>
+
+		<label for="result"> Result: </label>
+		<input type="number" name="result" id="result"><br><br>
+
+		<p id="showP"></p>
+
+
+		<button onclick="calc('add')" type="button"> Add</button>
+		<button onclick="calc('substract')" type="button"> Substract</button>
+		<button onclick="calc('multiply')" type="button"> Multiply</button>
+		<button onclick="calc('divide')" type="button"> Divide</button>
+	</form>
+</body>
+</html>

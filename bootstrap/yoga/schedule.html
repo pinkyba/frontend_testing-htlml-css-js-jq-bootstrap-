@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Animation on scroll webpage ref(https://github.com/michalsnik/aos)  -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+			<img src="images/logo.png" class="logo_img mt-2 ml-5 mr-2">	
+			<a href="index.html" class="navbar-brand logo_text mt-2" style="color: white !important;">Blossomy Yoga & Fitness</a>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#Navbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="Navbar">
+				<ul class="navbar-nav ml-auto mr-5">
+					<li class="nav-item mx-2">
+						<a href="index.html" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item dropdown mx-2">
+					    <a class="nav-link  dropdown-toggle" href="class.html">  Classes  </a>
+					    <ul class="dropdown-menu fade-up">
+						  <li><a class="dropdown-item" href="class.html" style="color: black !important;"> Yoga Class</a></li>
+						  <li><a class="dropdown-item" href="class.html" style="color: black !important;"> Fitness Class </a></li>
+					    </ul>
+					</li>
+					<li class="nav-item mx-2">
+						<a href="schedule.html" class="nav-link" style="color: navy !important;">Schedule</a>
+					</li>
+					<li class="nav-item mx-2">
+						<a href="about.html" class="nav-link">About</a>
+					</li>
+					<li class="nav-item mx-2">
+						<a href="contact.html" class="nav-link">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</nav>		
+		<!-- end navbar -->
+
+		<!-- Carousel -->
+		<div class="carousel slide" data-ride="carousel" data-aos="fade-up">
+			<div class="carousel-inner" >
+				<div class="carousel-item active" style="background-image: url(images/schedule.jpg); height: 670px;">
+					<div class="row">
+						<div class="col col-lg-12">
+							<h1 id="schedule_title" class="text-center" data-aos="fade-up">Class Schedule</h1>
+							<hr style="max-width: 7rem; border-color: white; border-width: 3px;">
+							<h5 class="text-center mt-5" style="font-family: abel; font-weight: 600;">
+								<a href="index.html" class="schedule_text" data-aos="fade-up">HOME</a>
+								<span id="divider">|</span>
+								<a href="schedule.html" class="schedule_text" data-aos="fade-up">SCHEDULE</a>
+							</h5>						
+						</div>
+					</div>
+											
+				</div>
+			</div>
+		</div>
+		<!-- end carousel -->
+
+		<!-- choose schedule bar -->
+		<div class="container" data-aos="fade-up">
+			<div class="row my-4">
+				<div class="col-10">
+					<div class="row">
+						<div class="col-md-2">
+							<a href="schedule.html" style="font-size: 18px;">All Class</a>
+						</div>
+						<div class="col-md-2">
+							<a href="schedule.html" style="font-size: 18px;">Yoga</a>
+						</div>
+						<div class="col-md-2">
+							<a href="schedule.html" style="font-size: 18px;">Fitness</a>
+						</div>
+						<div class="col-md-2">
+							<a href="schedule.html" style="font-size: 18px;">Zumba</a>
+						</div>
+						<div class="col-md-2">
+							<a href="schedule.html" style="font-size: 18px;">Yoga(Online)</a>
+						</div>
+						<div class="col-md-2">
+							<a href="schedule.html" style="font-size: 18px;">Fitness(Online)</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr style="">
+		</div>
+
+		<!-- schedule table -->
+		<div class="container my-5">
+			<h1 class="text-center mt-5" style="color: #00CED1; font-size: 55px;" data-aos="fade-up">Class Schedule</h1>
+			<hr class="hr_size mb-5">
+			<table class="table-bordered table-responsive text-center" style="color: white; font-size: 16px;" data-aos="fade-up">
+			  <thead style="background-color: #00CED1; ">
+			    <tr style="height: 50px;">
+			      <th scope="col">Day/Time</th>
+			      <th scope="col">MON</th>
+			      <th scope="col">TUE</th>
+			      <th scope="col">WED</th>
+			      <th scope="col">THUR</th>
+			      <th scope="col">FRI</th>
+			      <th scope="col">SAT</th>
+			      <th scope="col">SUN</th>
+			    </tr>
+			  </thead>
+			  <tbody class=" w-auto h-auto">
+			    <tr>
+			      <th scope="row" style="background-color: #00CED1;">6:30AM-7:30AM</th>
+			      <td style="background-color: #DA70D6;" class="td_hover">
+			      	<p>Vinyasa Yoga</p>
+			      	<p>Trainer - Tom Jordan</p>
+			      </td>
+			      <td></td>
+			      <td style="background-color: #FF69B4;" class="td_hover">
+			      	<p>Begineer Yoga(Online)</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td></td>
+			      <td style="background-color: #FFD700;" class="td_hover">
+			      	<p>Active Fitness</p>
+			      	<p>Trainer - Htoo Aung</p>
+			      </td>
+			      <td style="background-color: #40E0D0;" class="td_hover">
+			      	<p>Mindful Yoga</p>
+			      	<p>Trainer - Tom Jordan</p>
+			      </td>
+			      <td style="background-color: #C0C0C0;" class="td_hover">
+			      	<p>Ashtanga Yoga(Online)</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			    </tr>
+			    <tr>
+			      <th scope="row" style="background-color: #00CED1;">8:30AM-10:00PM</th>
+			      <td style="background-color: #FF69B4;" class="td_hover">
+			      	<p>Begineer Yoga</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td style="background-color: #DA70D6;" class="td_hover">
+			      	<p>Vinyasa Yoga</p>
+			      	<p>Trainer - Tom Jordan</p>
+			      </td>
+			      <td>@mdo</td>
+			      <td style="background-color: #FF69B4;" class="td_hover">
+			      	<p>Begineer Yoga</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td>Otto</td>
+			      <td style="background-color: #FFD700;" class="td_hover" class="td_hover">
+			      	<p>Active Fitness(Online)</p>
+			      	<p>Trainer - Htoo Aung</p>
+			      </td>
+			      <td>@mdo</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" style="background-color: #00CED1;">1:00PM-2:00PM</th>
+			      <td>Mark</td>
+			      <td>Otto</td>
+			      <td style="background-color: #40E0D0;" class="td_hover">
+			      	<p>Mindful Yoga(Online)</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td>Mark</td>
+			      <td style="background-color: #40E0D0;" class="td_hover">
+			      	<p>Mindful Yoga</p>
+			      	<p>Trainer - Tom Jordan</p>
+			      </td>
+			      <td style="background-color: #9ACD32;" class="td_hover">
+			      	<p>Functional Yoga(Online)</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td>@mdo</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" style="background-color: #00CED1;" class="td_hover">2:00PM-2:45PM</th>
+			      <td>Mark</td>
+			      <td style="background-color: #C0C0C0;" class="td_hover">
+			      	<p>Ashtanga Yoga</p>
+			      	<p>Trainer - Tom Jordan</p>
+			      </td>
+			      <td>@mdo</td>
+			      <td style="background-color: #DA70D6;" class="td_hover">
+			      	<p>Vinyasa Yoga(Online)</p>
+			      	<p>Trainer - Tom Jordan</p>
+			      </td>
+			      <td>Otto</td>
+			      <td style="background-color: #40E0D0;" class="td_hover">
+			      	<p>Mindful Yoga(Online)</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td style="background-color: #FFD700;" class="td_hover">
+			      	<p>Active Fitness(Online)</p>
+			      	<p>Trainer - Htoo Aung</p>
+			      </td>
+			    </tr>
+			    <tr>
+			      <th scope="row" style="background-color: #00CED1;">4:30PM-5:10PM</th>
+			      <td style="background-color: #FFD700;" class="td_hover">
+			      	<p>Active Fitness</p>
+			      	<p>Trainer - Htoo Aung</p>
+			      </td>
+			      <td style="background-color: #FF69B4;" class="td_hover">
+			      	<p>Begineer Yoga(Online)</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td style="background-color: #BC8F8F;" class="td_hover">
+			      	<p>Zumba Dance</p>
+			      	<p>Trainer - Mary Smith(Online)</p>
+			      </td>
+			      <td>Mark</td>
+			      <td>Otto</td>
+			      <td>@mdo</td>
+			      <td style="background-color: #BC8F8F;" class="td_hover">
+			      	<p>Zumba Dance</p>
+			      	<p>Trainer - Htoo Aung</p>
+			      </td>
+			    </tr>
+			    <tr>
+			      <th scope="row" style="background-color: #00CED1;">7:15PM-8:00PM</th>
+			      <td>Mark</td>
+			      <td style="background-color: #9ACD32;" class="td_hover">
+			      	<p>Functional Yoga(Online)</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			      <td style="background-color: #BC8F8F;" class="td_hover">
+			      	<p>Zumba Dance</p>
+			      	<p>Trainer - Htoo Aung</p>
+			      </td>
+			      <td>Mark</td>
+			      <td>Otto</td>
+			      <td style="background-color: #C0C0C0;" class="td_hover">
+			      	<p>Ashtanga Yoga</p>
+			      	<p>Trainer - Tom Jordan</p>
+			      </td>
+			      <td style="background-color: #9ACD32;" class="td_hover">
+			      	<p>Functional Yoga</p>
+			      	<p>Trainer - Watanabe Aki</p>
+			      </td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+		</div>
+		<!-- end schedule -->
+
+		<br>
+		<!-- footer section -->
+		<div class="bg-light">
+	    	<div class="container mt-5 mb-3 pt-5">
+		        <div class="row">
+		        	<div class="col-lg-4 col-md-6 col-sm-6" data-aos="fade-up">
+		        		<div class="footer_wel">
+		        			<img src="images/logo.png" class="img-fluid footer_wel_img">
+		        			<h1 id="footer_wel_text">Blossomy Yoga & Fitness</h1>
+		        			<p class="clock ml-2 mt-5">
+		        				<i class="far fa-clock mr-2"></i>
+		        				Mon - Fri: 6:30 am - 7:00 pm
+		        			</p>
+		        			<p class="clock ml-2">
+		        				<i class="far fa-clock mr-2"></i>
+		        				Sat - Sun: 8:30 am - 6:00 pm
+		        			</p>
+
+		        			<form action="#" class="my-5">
+								<div class="input-group mb-3">
+								  <input type="email" class="form-control" placeholder="Your Email" name="email">
+								  <div class="input-group-append">
+								    <button class="btn btn-info" type="button">Send</button>
+								  </div>
+								</div>
+		        			</form>
+		        		</div>
+		        	</div>
+		        	<div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6 justify-content-center" data-aos="fade-up">
+		        		<h3 class="footer_title mb-4">Popular List</h3>
+		        		<p><a href="#" class="footer_a">Online Yoga Class</a></p>
+		        		<p><a href="#" class="footer_a">Online fitness Class</a></p>
+		        		<p><a href="#" class="footer_a">Yoga for Beginner</a></p>
+		        		<p><a href="#" class="footer_a">Yoga for Pregrant</a></p>
+		        		<p><a href="#" class="footer_a">Schedule</a></p>
+		        	</div>
+		        	<div class="col-lg-2 col-md-3 col-sm-6" data-aos="fade-up">
+		        		<h3 class="mb-4">About Us</h3>
+		        		<p><a href="#" class="footer_a">Our Vision</a></p>
+		        		<p><a href="#" class="footer_a">Our Mission</a></p>
+		        		<p><a href="#" class="footer_a">Our Service</a></p>
+		        		<p><a href="#" class="footer_a">Our Experiences</a></p>
+		        		<p><a href="#" class="footer_a">Successful Stories</a></p>	        		
+		        	</div>
+		        	<div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up">
+		        		<h3 class="mb-4">Contact Info</h3>
+						<p class="clock ml-2 mt-4">
+						<i class="fa fa-phone mr-2"></i>
+		        			0152092
+		        		</p>
+		        		<p class="clock ml-2">
+		        			<i class="fa fa-envelope mr-2"></i>
+		        			admin@gmail.com
+		        		</p>
+		        		<p class="clock ml-2">
+		        			<i class="fa fa-location-arrow mr-2"></i>
+		        			Room No. 8-A , MTP Condo, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Insein Rd, Yangon, Myanmar
+		        		</p>	        			        		
+		        	</div>
+		        </div>
+		        <hr id="footer_hr">
+		        <div class="row">
+		        	<div class="col-lg-6 col-md-6 col-sm-6 mt-1">
+		        		Copyright © 2020 | Htet Htet
+		        	</div>
+		        	<div class="col-lg-2 offset-lg-4 col-md-6 col-sm-6">
+		        		<div class="footer_social">
+			        		<a href="https://www.facebook.com" target="blank"><i class="fa fa-facebook-f"></i></a>
+			        		<a href="https://www.twitter.com" target="blank"><i class="fa fa-twitter"></i></a>
+			        		<a href="https://www.instagram.com" target="blank"><i class="fa fa-instagram"></i></a>
+		        		</div>
+		        	</div>	        	
+		        </div>
+	    	</div>
+	    </div>
+	    <!-- end footer section -->
+
+	<script type="text/javascript" src="../bootstrap/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+	<script type="text/javascript" src="custom.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+	<!-- Animation on scroll webpage ref(https://github.com/michalsnik/aos)  -->
+	  <script>
+	    AOS.init();
+	  </script>
+</body>
+</html>

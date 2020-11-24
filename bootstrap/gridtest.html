@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing Bootstrap</title>
+
+	<meta charset="utf-8">
+
+	<!-- for mobile phone responsive layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<h2>Test Grid</h2>
+
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md"><button class="btn btn-primary btn-block my-2">button</button></div>
+	    <div class="col-md"><button class="btn btn-primary btn-block my-2">button</button></div>
+	    <div class="w-100"></div>
+	    <div class="col"><button class="btn btn-primary btn-block my-2">button</button></div>
+	    <div class="col"><button class="btn btn-primary btn-block my-2">button</button></div>
+	  </div>
+	</div>
+
+
+	<!--  responsive width 100% until medium size so, (small and medium size are 100% width) -->
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md-8 border">col-md-8</div>
+	    <div class="col-md-4 border">col-md-4</div>
+	  </div>
+	  <div class="row">
+	    <div class="col-md border">col-md</div>
+	    <div class="col-md border">col-md</div>
+	    <div class="col-md border">col-md</div>
+	  </div>
+	</div>
+
+<br>
+
+<!-- responsive with half width or developer specified width -->
+<div class="container">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+  <div class="row">
+    <div class="col-md-8 border">.col-md-8</div>
+    <div class="col-6 col-md-4 border">.col-6 .col-md-4</div>
+  </div>
+
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+  <div class="row">
+    <div class="col-6 col-md-4 border">.col-6 .col-md-4</div>
+    <div class="col-6 col-md-4 border">.col-6 .col-md-4</div>
+    <div class="col-6 col-md-4 border">.col-6 .col-md-4</div>
+  </div>
+
+  <!-- Columns are always 50% wide, on mobile and desktop -->
+  <div class="row">
+    <div class="col-6 border">.col-6</div>
+    <div class="col-6 border">.col-6</div>
+    <div class="col-8 col-md-4 border">.col-6</div>
+  </div>
+</div>
+
+
+<!-- output: all size = col-1, small size = col-2, medium size= col-4 -->
+	<div class="container">
+	  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+	    <div class="col">Column</div>
+	    <div class="col">Column</div>
+	    <div class="col">Column</div>
+	    <div class="col">Column</div>
+	  </div>
+	</div>
+
+
+	<!-- Jquery and js build in library -->
+	<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

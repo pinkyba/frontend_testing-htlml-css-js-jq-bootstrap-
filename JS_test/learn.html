@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Intro</title>
+
+	<script type="text/javascript" src="js/custom.js"></script>
+
+	<script type="text/javascript">
+		// console.log("console Js")
+		// document.write("<h1>Hello JavaScript.....</>")
+
+		// String
+		var str = "This is a string. 👏";
+		var strSingle = 'This is the 2nd string. 💁';
+
+		alert(str);
+		console.log(typeof str); //show datatype
+		console.log(str.length);
+		console.log(str.toUpperCase());
+
+		// Number
+		var age = 24;
+		var num = 1/3;
+		console.log(typeof age);
+		console.log(num);
+		console.log(typeof num);
+		console.log(num.toFixed(2)); // display two number of floating number
+
+		// Boolean
+		var pass = true;
+		console.log(!pass);
+
+		// Operator
+		var result = (1+2)*4;
+		console.log(result);
+
+		var result = 144.0098+25;
+		console.log(result);
+		console.log(typeof result);
+
+		var result ='string '+1;
+		console.log(result);
+		console.log(typeof result);
+
+		// Variables (take care Case Sensentive)
+		var todo = 'Eat';
+		var Todo = 'Sleep';
+		console.log(todo);
+		console.log(Todo);
+
+		// Function
+		function addTwoNumbers(a,b) {
+			return a+b;
+		}
+		console.log(addTwoNumbers(2,8));
+
+
+		// Conditional
+		var c = 10;
+		var e = 5;
+		if (c>e){
+			console.log('c > e');
+		}else{
+			console.log('c < e');
+		}
+
+		// Array
+		var item = [100, "paint", [200, "brush"], false];
+		console.log(item);
+		console.log(typeof item);
+		console.log(item[item.length-1]);
+		console.log(item[2]);
+		console.log(item[2][0]);
+		console.log(item.push('fruit'));
+		console.log(item.pop());
+		console.log(item.reverse());
+		console.log(item.sort());
+
+
+		// Objects
+		var pc = {
+			name: "Lenovo",
+			color: "black"
+		};
+		console.log(typeof pc);
+		console.log(pc);
+		console.log(pc.name);
+
+		// add new key/value to object
+		pc.size = 'medium';
+
+		console.log(pc);
+
+
+
+		// show value of alert box
+		console.log(condition);
+
+	</script>
+
+</head>
+<body>
+	<h1>Hello JavaScript</h1>
+</body>
+</html>

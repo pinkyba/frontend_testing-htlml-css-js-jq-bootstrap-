@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Staff Registration</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style>
+    .error{
+        outline: 1px solid red;
+    }    
+</style>
+</head>
+<body>
+	<div style="margin-left: 30%;">
+	<div id="divRegister">
+		<h2>Staff Register Form</h2>
+		Name: <input type="text" name="" id="name"><br><br>
+		Age: <input type="text" name="" id="age"><br><br>
+		Address: <input type="text" name="" id="address"><br><br>
+		Email: <input type="text" name="" id="email"><br><br>
+		Gender:
+		<label for="male">Male: </label><input type="radio" name="gender" value="male" id="male">
+		<label for="female">Female: </label><input type="radio" name="gender" value="Female" id="female"><br><br>
+		<button id="btnregister">Register</button>
+	</div>
+
+	<div id="divEdit">
+		<h2>Staff Register Edit Form</h2>
+		<input type="hidden" name="" id="myid">
+		Name: <input type="text" name="" id="ename"><br><br>
+		Age: <input type="text" name="" id="eage"><br><br>
+		Address: <input type="text" name="" id="eaddress"><br><br>
+		Email: <input type="text" name="" id="eemail"><br><br>
+		Gender:
+		<label for="emale">Male: </label><input type="radio" name="gender" value="male" id="emale">
+		<label for="efemale">Female: </label><input type="radio" name="gender" value="Female" id="efemale"><br><br>
+		<button id="btnUpdate">Update</button>
+	</div>
+
+	<div>
+		<br><br>
+		<table border="1" cellpadding="10px" cellspacing="0px">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Address</th>
+					<th>Email</th>
+					<th>Gender</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				
+			</tbody>
+		</table>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			// hide edit form
+			$('#divEdit').hide();
+
+			showTable();
+
+			// show outline of textbox with red color if it is empty
+			$('#divRegister input[type="text"]').blur(function(){
+		        if(!$(this).val()){
+		            $(this).addClass("error");
+
+		        } else{
+		            $(this).removeClass("error");
+		        }
+		    });
+
+
+			$('#btnregister').click(function(){
+
+				var name = $.trim($('#name').val());
+				var age = $.trim($('#age').val());
+				var address = $.trim($('#address').val());
+				var email = $.trim($('#email').val());
+				var gender = $.trim($("input[name=gender]:checked").val());
+
+				// // check input box are empty or not
+				// if(name == "" ){
+				// 	alert("not ok");
+				// 	return false;
+				// }
+
+				// check at least one input is empty
+			    var empty = $(this).parent().find("input").filter(function() {
+			        return this.value === "";
+			    });
+			    if(empty.length) {
+			    	alert("Please fill all field!")
+			        return false; // not to work another
+			    }
+
+
+				staff = {
+						name: name,
+						age: age,
+						address: address,
+						email: email,
+						gender: gender
+				}
+
+				var staffList = localStorage.getItem('staff');
+				var staffArray;
+
+				if(staffList == null){
+					staffArray = [];
+				}
+				else{
+					staffArray = JSON.parse(staffList);
+				}
+
+				staffArray.push(staff);
+
+				var stringStaff = JSON.stringify(staffArray);
+				console.log(stringStaff);
+				
+				localStorage.setItem('staff',stringStaff);
+
+				showTable();
+			})
+
+			function showTable(){
+				var staffList = localStorage.getItem('staff');
+				
+				var staffArray = JSON.parse(staffList);
+
+				var html = '';
+				var j = 1;
+				$.each(staffArray,function(k,v){
+					html += `<tr>
+							<td>${j++}</td>
+							<td>${v.name}</td>
+							<td>${v.age}</td>
+							<td>${v.address}</td>
+							<td>${v.email}</td>
+							<td>${v.gender}</td>
+							<td><button data-id="${k}" class="btnEdit">Edit</button><button data-id="${k}" class="btnDelete">Delete</button></td>
+							</tr>`;
+				})
+				
+				$('#tbody').html(html);
+			}
+
+
+			// set data that will be updated in update form input
+			
+			$('#tbody').on('click','.btnEdit', function(){
+				$('#divEdit').show();
+				$('#divRegister').hide();
+
+				var id = $(this).data("id");
+
+				var staffList = localStorage.getItem('staff');
+				var staffArray = JSON.parse(staffList);
+				//console.log(staffArray);
+
+				var editStaff = staffArray[id];
+				//console.log(editStaff);
+
+				$('#myid').val(id);
+				$('#ename').val(editStaff.name);
+				$('#eage').val(editStaff.age);
+				$('#eaddress').val(editStaff.address);
+				$('#eemail').val(editStaff.email);
+
+				if(editStaff.gender == "male"){
+					$('#emale').prop('checked','checked');
+				}
+				else{
+					$('#efemale').prop('checked','checked');
+				}
+			})
+
+			
+			// update data of local storage and show table
+			$('#btnUpdate').click(function(){
+				var id = $('#myid').val();
+				name = $('#ename').val();
+				age = $('#eage').val();
+				address = $('#eaddress').val();
+				email = $('#eemail').val();
+				gender = $("input[name=gender]:checked").val();
+
+				staff = {
+						name: name,
+						age: age,
+						address: address,
+						email: email,
+						gender: gender
+				}
+
+				var staffList = localStorage.getItem('staff');
+				var staffArray = JSON.parse(staffList);
+				
+
+				staffArray[id] = staff;
+				var stringStaff = JSON.stringify(staffArray);
+				console.log(stringStaff);
+
+				localStorage.setItem("staff",stringStaff);
+				showTable();
+
+			})
+
+			// delete data from local storage
+			$('#tbody').on('click','.btnDelete', function(){
+				var id = $(this).data("id");
+				var staffList = localStorage.getItem('staff');
+				var staffArray = JSON.parse(staffList);
+
+				staffArray.splice(id,1);
+				//console.log(staffArray);
+
+				var stringStaff = JSON.stringify(staffArray);
+				//console.log(stringStaff);
+
+				localStorage.setItem("staff",stringStaff);
+
+				showTable();
+			})
+		})
+	</script>
+</body>
+</html>

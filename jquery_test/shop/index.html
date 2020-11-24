@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shop</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="navbar">
+		<font id="title">👶🧡💛 Baby Toy Shopping 💛🧡👩</font>
+		<a href="addtocart.html"><img src="image/add.png" id="addtocart" align="right"></a>
+		<div id="quantity">
+			<span id="count"> <font>0</font> </span>
+		</div>
+	</div>
+	<br><br>
+	<div id="tablediv">
+		<table cellpadding="40px" width="100%">
+			<tr>
+				<td>
+					<img src="image/a.jpg">
+					<p> Name: Happy Fishing Toy</p>
+					<p> Price: 15000 Ks</p>
+					<button class="addtocart" data-id ="1" data-img="a.jpg" data-name="Happy Fishing Toy" data-price="15000">Add to cart</button>
+				</td>	
+				<td>
+					<img src="image/geometric_wooden_toy.jpeg">
+					<p> Name: Baby Geometric Wooden Toy</p>
+					<p> Price: 20000 Ks</p>
+					<button class="addtocart" data-id ="2" data-img="geometric_wooden_toy.jpeg" data-name="Baby Geometric Wooden Toy" data-price="20000">Add to cart</button>
+				</td>
+				<td>
+					<img src="image/9-in-1-pla-cube-activity.jpg">
+					<p> Name: 9 in 1 baby cube activity</p>
+					<p> Price: 25000 Ks</p>
+					<button class="addtocart" data-id ="3" data-img="9-in-1-pla-cube-activity.jpg" data-name="9 in 1 baby cube activity" data-price="25000">Add to cart</button>
+				</td>
+				<td>
+					<img src="image/refrigerator.jpg">
+					<p> Name: Pinky Baby Refrigerator </p>
+					<p> Price: 4500 Ks</p>
+					<button class="addtocart" data-id ="4" data-img="refrigerator.jpg" data-name="Pinky Baby Refrigerator" data-price="4500">Add to cart</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="image/baby_bubble_ball_50pcs.jpg">
+					<p> Name: Baby bubble ball</p>
+					<p> Price: 88000 Ks</p>
+					<button class="addtocart" data-id ="5" data-img="baby_bubble_ball_50pcs.jpg" data-name="Baby bubble ball 50pcs" data-price="88000">Add to cart</button>
+				</td>	
+				<td>
+					<img src="image/baby_pianism_funny_musical_cow_education.jpg">
+					<p> Name: Baby pianism funny musical</p>
+					<p> Price: 12000 Ks</p>
+					<button class="addtocart" data-id ="6" data-img="baby_pianism_funny_musical_cow_education.jpg" data-name="Baby pianism funny musical" data-price="12000">Add to cart</button>
+				</td>
+				<td>
+					<img src="image/barbie_doll_set_9pcs.jpg">
+					<p> Name: 9 in 1 Barbie doll set</p>
+					<p> Price: 16500 Ks</p>
+					<button class="addtocart" data-id ="7" data-img="barbie_doll_set_9pcs.jpg" data-name="9 in 1 Barbie doll set" data-price="16500">Add to cart</button>
+				</td>
+				<td>
+					<img src="image/9-in-1-pla-cube-activity.jpg">
+					<p> Name: Babies and Toddler</p>
+					<p> Price: 6000 Ks</p>
+					<button class="addtocart" data-id ="8" data-img="9-in-1-pla-cube-activity.jpg" data-name="Babies and Toddler" data-price="6000">Add to cart</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<script type="text/javascript" src="../jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// to show cart notication count
+			cartNoti();
+			
+			$('.addtocart').click(function(){
+
+				var id = parseInt($(this).data("id"));
+				var img = $(this).data("img");
+				var name = $(this).data("name");
+				var price = $(this).data("price");
+
+				var item = {
+						id: id,
+						img: img,
+						name: name,
+						price: price,
+						qty: 1
+				}
+
+				var itemList = localStorage.getItem("item");
+				var itemArray;
+				var check = false;
+				
+				
+				if(itemList == null){
+					itemArray = [];
+				}else{
+					itemArray = JSON.parse(itemList);
+
+					$.each( itemArray, function( key, value ) {
+					console.log("id"+id);
+					console.log("value.id"+value.id);
+  					if(id == value.id){
+  						
+  						itemArray[key].qty = value.qty + 1;
+  						check = true;
+  					}
+  					
+				});
+				}
+				console.log(check);
+				if(check == false){
+					itemArray.push(item);
+				}
+				console.log(itemArray);
+
+				var stringItem = JSON.stringify(itemArray);
+				localStorage.setItem("item",stringItem);
+
+				cartNoti();
+
+				})
+
+			// show add to cart item count
+			function cartNoti(){
+				var count = 0;
+				var itemList = localStorage.getItem("item");
+				if (itemList != null){
+					itemArray = JSON.parse(itemList);
+					$.each( itemArray, function( key, value ) {
+  					count += value.qty;	
+				});
+				$('#count').html(count);
+				}
+			}
+
+
+		})
+	</script>
+
+</body>
+</html>

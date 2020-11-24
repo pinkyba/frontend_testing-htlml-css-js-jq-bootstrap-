@@ -1,0 +1,254 @@
+/*Universal selector*/
+/**{
+	color: red;
+}*/
+
+/*Tag/Element Selector*/
+p{
+	line-height: 30px;
+}
+
+/*ID selector (Use only one time)*/
+#secondP{
+	font-style: italic;
+	line-height: 20px;
+}
+
+/*Class selector (can use more than one time)*/
+.firstP{
+	font-style: bold;
+	color: blue;
+	letter-spacing: 2px;
+	word-spacing: 5px;
+}
+
+
+.textUpper{
+	text-transform: uppercase;
+}
+
+
+/*Attribute Selector/ Grouping Selector*/
+a[title="Google"],
+a[title="Facebook"]{
+	text-transform: uppercase;
+}
+
+/*Descendent Selector*/
+p a{
+	text-transform: lowercase;;
+	text-decoration: double;
+	text-decoration-line: underline;
+}
+
+/*Child Selector*/
+p>a{
+	text-transform: uppercase;
+	text-decoration-style: wavy;
+}
+
+/*Pseudo selector - Link*/
+a[title="Google"]:link{
+	text-decoration: none;
+	color: blue !important;
+}
+a[title="Google"]:hover{
+	background-color: red !important;
+	color: yellow !important;
+}
+a[title="Google"]:active{
+	background-color: pink;
+	color: black;
+}
+a[title="Google"]:visited{
+	background-color: gray;
+	color: navy;
+}
+
+
+/*display one or more pages in only one page*/
+:target{
+	background-color: lightgray;
+}
+
+
+/*border*/
+div#borderDiv p:first-child{
+	border: 2px solid #000;
+}
+div#borderDiv p:nth-child(2){
+	border: 2px dashed red;
+}
+div#borderDiv p:nth-child(3){
+	border: 4px double #000;
+}
+div#borderDiv p:last-child{
+	border: 2px dotted #111;
+}
+
+/*margin*/
+#marginDiv{
+	border: 1px solid black;
+}
+div#marginDiv p:first-child{
+	margin: 40px;
+	border: 1px solid black;
+}
+div#marginDiv p:nth-child(2){
+	margin: 20px 40px;
+	border: 1px solid black;
+}
+
+div#marginDiv p:nth-child(3){
+	margin: 50px 50px 50px;
+	border: 1px solid black;
+}
+div#marginDiv p:last-child{
+	margin: 15px 5px 20px 5px;
+	border: 1px solid black;
+}
+
+/*padding*/
+#paddingDiv{
+	border: 1px solid black;
+}
+div#paddingDiv p:first-child{
+	padding: 25px;
+	border: 1px solid black;
+}
+div#paddingDiv p:nth-child(2){
+	padding: 15px 2%;
+	border: 1px solid black;
+}
+div#marginDiv p:last-child{
+	padding: 15px 5px 20px 5px;
+	border: 1px solid black;
+}
+
+div#paddingDiv p:nth-child(3){
+	padding: 15px 5px 20px;
+	border: 1px solid black;
+}
+
+
+
+/*Float*/
+div#float_left img{
+	width: 400px;
+	height: 200x;
+	float: left;
+}
+.clear{
+	clear: both;
+}
+div#float_right img{
+	width: 400px;
+	height: 200x;
+	float: right;
+}
+
+
+
+div.flex_one img, div.flex_two img{
+	width: 600px;
+	height: 300x;
+}
+/*Flex*/
+
+div.flex_one div, div.flex_two div{
+	margin: 20px 50px;
+	
+}
+div.flex_one, div.flex_two{
+	display: flex;
+}
+
+div.flex_one div, div.flex_two div{
+	flex-basis: 800px;
+}
+
+
+
+
+/*Grid*/
+div.grid_one div, div.grid_two div, div.grid_three div, div.grid_four div, div.grid_five div{
+	text-align: center;
+	color: #fff;
+	font-size: 1px solid #bbb;
+	padding: 50px;
+}
+
+div.grid_one, div.grid_two, div.grid_three, div.grid_four, div.grid_five{
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+
+div.grid_two{
+	grid-column-gap: 50px;
+}
+
+div.grid_three{
+	grid-row-gap: 50px;
+}
+
+
+div.grid_four{
+	grid-gap: 100px;
+}
+
+div.grid_five div.ColumnSeven{
+	grid-column-start: 2;
+	grid-column-end: 4;	
+}
+/*div.grid_five div.ColumnOne{
+	grid-row-start: 1;
+	grid-row-end: 3;
+}*/
+
+
+/*Position*/
+
+div#firstElement{
+	border: 1px solid orange;
+	background-color: orange;
+	color: white;
+}
+div#secondElement{
+	border: 1px solid skyblue;
+	background-color: skyblue;
+	color: white;
+}
+
+/*relative (base on element)*/
+span#count{
+	width: 40px;
+	height: 4opx;
+	border-radius: 50px;
+	padding: 5px 10px;
+	background-color: silver;
+	position: relative;
+	left: 500px;
+	top: 30px;
+}
+
+/*Absolute (base on browser)*/
+div#thirdElement{
+	border: 1px solid darkred;
+	background-color: darkred;
+	color: white;
+
+	position: absolute;
+	left: 300px;
+}
+
+
+/*Fixed (stay on layout eventhough scroll page) , based on browser*/
+div#fourthElement{
+	border: 1px solid pink;
+	background-color: pink;
+	color: white;
+
+	position: fixed;
+	top: 30px;
+	right: 30px;
+}

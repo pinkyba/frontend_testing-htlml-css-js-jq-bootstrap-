@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grid Col-xs col-sm col-md col-lg</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<meta charset="utf-8">
+    
+	<h2 class="text-center text-danger my-5"> Row Col-xs col-sm col-md col-lg </h2>
+	
+	<div class="container">
+		<div class="row">
+			<!-- col-lg= laptop size, col-md=desktop size, col-sm= large size of phone, col-xs= small size of phone -->
+
+			<div class="col-12 col-lg-3 col-md-4 col-sm-6"> <!-- other size= col-12, large size= col-3, medium size= col-4, small size= col-6 -->
+				<button class="btn btn-primary py-2 btn-block my-2">button1</button>
+			</div>
+			<div class="col col-lg-3 col-md-4"> 
+				<button class="btn btn-primary py-2 btn-block my-2">button2</button>
+			</div>
+			<div class="col col-lg-3 col-md-4">
+				<button class="btn btn-primary py-2 btn-block my-2">button3</button>
+			</div>
+			<div class="col col-lg-3 col-md-4">
+				<button class="btn btn-primary py-2 btn-block my-2">button4</button>
+			</div>
+		</div>
+
+		<!-- Offset -->
+		<h1 class="text-center my-5">Offset</h1>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-4 offset-md-4">
+					<button class="btn btn-success btn-block">Button</button>
+				</div>
+			</div>
+
+			<div class="row">
+			    <div class="col-md-4 bg-light border">.col-md-4</div>
+			    <div class="col-md-4 offset-md-4 bg-light border">.col-md-4 .offset-md-4</div>
+			 </div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

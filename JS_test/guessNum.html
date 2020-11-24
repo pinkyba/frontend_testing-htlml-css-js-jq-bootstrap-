@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess correct number</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var count=0;
+		var secretNo = Math.random(1,10)*10;
+		secretNo = secretNo.toFixed(0);
+		//console.log(secretNo);
+
+		var guessNo = prompt('Guess a Number between 1 and 10.');
+
+		guessNo = Number(guessNo);
+
+
+		while(guessNo != secretNo){
+			if(guessNo <= -1 || guessNo > 10){
+				alert('Your number should be between 1 and 10.')
+			}
+			else if(guessNo > secretNo){
+				alert('Too large. Try again');	
+			}
+			else{
+				alert('Too small. Try again');
+			}
+			count = count+1;
+			var guessNo = prompt('Try Again!! Guess a Number between 1 and 10.');
+			guessNo = Number(guessNo);
+		}
+		alert('Yay... Correct Number!!! >>> Your guess count: '+count+' <<<');
+
+
+	</script>
+
+</body>
+</html>

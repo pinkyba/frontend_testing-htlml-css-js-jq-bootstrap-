@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+	<h3>Student Registration</h3>
+	<fieldset>
+		<legend>Sutdent Registration</legend>
+	<form action="register.php" method="POST">
+		<label for="stu name">Name</label>
+		<input type="text" name="" id="stu name">
+		<br><br>
+		<label for="stu_email">Email</label>
+		<input type="email" name="" id="stu_email">
+		<br><br>
+		<label for="stu_phone">Phone</label>
+		<input type="number" name="" id="stu_phone">
+		<br><br>
+		<label for="stu_passport">Passport</label>
+		<input type="file" name="" id="stu_passport" accept="image/*">
+		<br><br>
+		<label for="stu_password">Password</label>
+		<input type="Password" name="" id="stu_password">
+		<br><br>
+		<label for="stu_year">Year</label>
+		<select id="stu_year">
+			<option value="first">first year</option>
+			<option value="second">second year</option>
+			<option value="third">third year</option>
+		</select>
+		<br><br>
+		<label>Gender</label><br>
+		<input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
+		
+		<input type="radio" name="gender" value="female" id="female"><label for="female">Female</label>
+
+		<br><br>
+		<label>Hobby</label>
+		<br>
+		<input type="checkbox" name="" id="reading"><label for="reading">Reading</label>
+		<input type="checkbox" name="" id="travelling"><label for="travelling">Travelling</label>
+		<input type="checkbox" name="" id="movie"><label for="movie">Watching Movie</label>
+		<input type="checkbox" name="" id="game"><label for="game">Gaming</label>
+		<input type="checkbox" name="" id="swimming"><label for="swimming">Swimming</label>
+		<input type="checkbox" name="" id="dance"><label for="dance">Dance</label>
+		<input type="checkbox" name="" id="drawing"><label for="drawing">Drawing</label>
+		<input type="checkbox" name="" id="coding"><label for="coding">Coding</label>
+		<input type="checkbox" name="" id="singing"><label for="singing">Singing</label>
+		<br><br>
+		<label for="stu_address">Address</label>
+		<textarea id="stu_address"></textarea>
+		<br><br>
+		<input type="submit" value="Register">
+	</form>
+	</fieldset>
+</body>
+</html>

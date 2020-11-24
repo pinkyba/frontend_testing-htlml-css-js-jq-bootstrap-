@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery show/hide</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("img").hide(2000,function(){
+					alert("ok");
+				}).show(1000).attr("width","500px").attr("height","500px");
+			})
+		})
+	</script>
+</head>
+<body>
+	<img src="b.png" width="150" height="100">
+	<br>
+	<button>Hide</button>
+
+</body>
+</html>

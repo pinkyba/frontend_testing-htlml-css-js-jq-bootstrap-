@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check (prop,attr)</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$(".check1").click(function(){
+				var myCheck = $('.check1').prop("checked");
+				console.log(myCheck);// if checked, return true or unchecked, return false
+			})
+			
+		})
+	</script>
+</head>
+<body>
+	check: <input type="checkbox" name="" class="check1" checked="checked">
+	
+</body>
+</html>

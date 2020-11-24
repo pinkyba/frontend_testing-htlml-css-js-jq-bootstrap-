@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>StudentForm</title>
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
+</head>
+<body>
+	<h1>Student Form</h1>
+	<form action="" method="POST">
+		<label for="stu_name">Name</label><br>
+		<input type="text" name="" id="stu_name">
+		<br><br><br>
+		<label for="stu_father">Father Name</label><br>
+		<input type="text" name="" id="stu_father">
+		<br><br><br>
+		<label for="stu_phone">Phone</label><br>
+		<input type="text" name="" id="stu_phone" readonly="">
+		<br><br><br>
+		<label>Date of Birth</label><br>
+		<table align="center">
+		<tr><td>
+		<label for="day">Day</label><br>
+		<select id="day">
+			<option value="day1">1</option>
+			<option value="day2">2</option>
+			<option value="day3">3</option>
+			<option value="day4">4</option>
+			<option value="day5">5</option>
+			<option value="day6">6</option>
+			<option value="day7">7</option>
+			<option value="day8">8</option>
+			<option value="day9">9</option>
+			<option value="day10">10</option>
+			<option value="day11">11</option>
+			<option value="day12">12</option>
+			<option value="day13">13</option>
+			<option value="day14">14</option>
+			<option value="day15">15</option>
+			<option value="day16">16</option>
+			<option value="day17">17</option>
+			<option value="day18">18</option>
+			<option value="day19">19</option>
+			<option value="day20">20</option>
+			<option value="day21">21</option>
+			<option value="day22">22</option>
+			<option value="day23">23</option>
+			<option value="day24">24</option>
+			<option value="day26">26</option>
+			<option value="day27">27</option>
+			<option value="day28">28</option>
+			<option value="day29">29</option>
+			<option value="day30">30</option>
+			<option value="day24">31</option>
+		</select></td>
+		<td>
+		<label for="month">Month</label><br>
+		<select id="month">
+			<option value="jan">January</option>
+			<option value="feb">February</option>
+			<option value="mar">March</option>
+			<option value="april">April</option>
+			<option value="may">May</option>
+			<option value="june">June</option>
+			<option value="july">July</option>
+			<option value="aug">August</option>
+			<option value="sep">September</option>
+			<option value="oct">October</option>
+			<option value="nov">November</option>
+			<option value="dec">December</option>
+		</select>
+		</td>
+		<td>
+			<label for="year">Year</label><br>
+			<select id="year">
+			<option value="y1994">1994</option>
+			<option value="y1995">1995</option>
+			<option value="y1996">1996</option>
+			<option value="y1997">1997</option>
+			<option value="y1998">1998</option>
+			</select>
+		</td>
+		</tr>
+		</table>
+		<br><br><br>
+		<label for="stu_email">Email</label><br>
+		<input type="Email" name="" id="stu_email">
+		<br><br><br>
+
+		<label>Gender</label><br><br>
+		<input type="radio" name="gender" value="male" id="male">
+		<label for="male">Male</label>
+		<input type="radio" name="gender" value="female" id="female">
+		<label for="female">Female</label>
+		<br><br><br>
+
+		<label for="stu_address">Address</label>
+		<textarea id="stu_address"></textarea>
+		<br><br><br>
+
+		<label>Qualification</label>
+		<br><br>
+		<input type="checkbox" name="" id="highschool">
+		<label for="highschool" class="chcolor">High School(10th)</label><br>
+		<input type="checkbox" name="" id="highschool1" disabled>
+		<label for="highschool1">High School(12th)</label><br>
+		<input type="checkbox" name="" id="grad">
+		<label for="grad" class="chcolor">Graduation(Bachelors)</label><br>
+		<input type="checkbox" name="" id="postgrad">
+		<label for="postgrad" class="chcolor">Post Graduation(Masters)</label><br>
+		<input type="checkbox" name="" id="phd">
+		<label for="phd" class="chcolor">PHD</label><br>
+		<br><br><br>
+
+		<fieldset>
+			<legend id="bgcolor">Rules</legend><br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat.
+			<br>
+			<ul>
+				<li>This is first rule.</li>
+				<li id="second">This is second rule.</li>
+				<li>This is third rule.</li>
+				<li>This is fourth rule.</li>
+			<li id="fifth">This is fifth rule.</li>
+				<li>This is six rule.</li>
+				<li id="seventh">This is seventh rule.</li>
+				<li>This is eight rule.</li>
+			</ul>
+		</fieldset>
+		<br><br><br>
+
+		<fieldset>
+			<legend>For office use only</legend><br>
+			<input type="checkbox" name="" id="approve"><label for="approve" class="chcolor">Approve/ Endorse</label><br>
+			<input type="checkbox" name="" id="disapprove"><label for="disapprove" class="chcolor">Disapprove/ Not Endorse</label><br><br>
+			<table>
+			<tr>
+				<td style="width: 48%;">
+					<label for="empName">Employee Name</label>
+					<br><br><br>
+					Mr.John
+				</td>
+				<td style="width: 45%;">
+					Employee Sign
+					<br><br><br>
+					Mr.John
+				</td>
+				<td style="width: 48%;">
+					Date
+					<br><br><br>
+					8-6-2020
+				</td>
+			</tr>
+		</table>
+		</fieldset>
+
+		<p></p>
+		<br>
+		<hr>
+		<p id="thank">Thank You</p>
+		<hr>
+	</form>
+</body>
+</html>

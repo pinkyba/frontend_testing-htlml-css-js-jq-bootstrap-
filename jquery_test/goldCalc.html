@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gold Calculator</title>
+</head>
+<body>
+	<div>
+		Enter gold weight (gram)
+		<input type="number" name="" id="weight">
+		<br>
+		<button id="calcGold">Calculate</button>
+	</div>
+	<div id="result">
+		
+	</div>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#calcGold').click(function(){
+				var html = '';
+				var weight = $('#weight').val();
+				var kyat = (weight/16.6).toFixed(0);
+				var pae = (((weight/16.6)-kyat)*16).toFixed(0);
+				var yay = (((((weight/16.6)-kyat)*16)-pae)*8).toFixed(0);
+				
+				var totalkyat = 1+(pae/16)+(yay/128);
+				var result = 1000000*totalkyat;
+
+				html += `Your gold weight(gram): ${weight} gram <br>`;
+				html += `Your gold weight (kyat,pae,yay): ${kyat} kyat ${pae} pae ${yay} yay <br>`;
+				html += `Current gold price: 1000000 MMK <br>`;
+				html += `Your gold price: ${result} MMK <br>`
+
+				$('#result').html(html);
+			})
+			
+		})
+	</script>
+</body>
+</html>

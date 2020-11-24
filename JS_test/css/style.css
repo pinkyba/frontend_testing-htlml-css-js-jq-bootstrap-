@@ -1,0 +1,71 @@
+
+#formDiv{
+	margin-left: 185px;
+	margin-top: 80px;
+	background-color:  	#F5FFFA;
+	width: 50%;
+	float: left;
+}
+#category{
+	width: 20%;
+	margin-right: 210px;
+	margin-top: 80px;
+	background-color: #F5FFFA;
+	float: right;
+}
+#category p{
+	font-size: 20px;
+	line-height: 20px;
+	color: blue;
+}
+h1{
+	color: #000080;
+	text-align: center;
+}
+form{
+	margin: 20px 80px;
+	width: 80%;
+}
+button{
+	width: 150px;
+	height: 40px;
+	color: #000080;
+	background-color: #87CEFA;
+	border: 1px solid lightgray;
+	margin-left: 150px;
+	margin-top: 20px;
+	font-size: 17px;
+	outline: none;
+}
+button:hover{
+	outline: none;
+	background-color: #ADD8E6;
+}
+
+input[type='number']{
+	width: 150px;
+	height: 30px;
+	margin: 10px 30px;
+	font-size: 18px;
+	color: #191970;
+}
+
+#inches{
+	margin-left: 150px;
+}
+
+label{
+	font-size: 22px;
+	color: #000080;
+}
+#bmi{
+	color: #191970;
+	font-size: 22px;
+	font-weight: bold;
+	background-color:  	#87CEFA;
+}
+#state{
+	background-color:  	#87CEFA;
+	font-size: 22px;
+}
+

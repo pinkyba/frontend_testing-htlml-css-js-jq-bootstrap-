@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First JQ</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				//alert("ok");
+				var name = $("#name").val();
+				//console.log(name);
+
+				$("h4").html("Welcome"+name);
+			})
+
+
+		})
+
+	</script>
+</head>
+<body>
+	<h4></h4>
+	<label for="name">Enter your name: </label>
+	<input type="text" name="" id="name"><br>
+	<button id="btn1">Show</button>
+
+</body>
+</html>

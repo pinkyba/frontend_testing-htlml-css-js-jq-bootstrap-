@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Myanmar Tax Calculator</title>
+	<script type="text/javascript">
+		function calcMytax() {
+			let result = document.querySelector('#result');
+			result.innerHTML = `Result`;
+
+			let monthly = parseFloat(document.getElementById('salary').value);
+			let annual = monthly*12;
+
+			let monthly_salary = document.querySelector('#monthly_salary');
+			monthly_salary.innerHTML = `Monthly Salary: ${monthly} MMK`;
+
+			let annual_salary = document.querySelector('#annual_salary');
+			annual_salary.innerHTML = `Annual Salary: ${annual} MMK`;
+
+			let income = document.querySelector('#income');
+			income.innerHTML = `Income for 12 month: ${annual} MMK`;
+
+			let personal_relief = annual*0.2;
+			let personal = document.querySelector('#personal');
+			personal.innerHTML = `Personal Relief: -${personal_relief} MMK`;
+
+			let parent = document.querySelector('#parent');
+			let parent_relief;
+			let spouse = document.querySelector('#spouse');
+			let spouse_relief;
+
+			let check1 = document.getElementById("mother").checked;
+			let check2 = document.getElementById("father").checked;
+			let check3 = document.getElementById("wife").checked;
+
+			if (check1 == true && check2 == true){
+				parent_relief = 2000000;
+			}
+			else if(check1 == true || check2 == true){
+				parent_relief = 1000000;
+			}
+			else{
+				parent_relief = 0;
+			}
+			parent.innerHTML = `Parent relief: -${parent_relief} MMK`;
+
+			if(check3 == true){
+				spouse_relief = 1000000;
+			}
+			else{
+				spouse_relief = 0;
+			}
+			spouse.innerHTML = `Spouse relief: -${spouse_relief} MMK`;
+
+			let noOfchild = parseFloat(document.getElementById('child').value);		
+			let child_relief = 500000*noOfchild;
+			let children = document.querySelector('#children');
+			children.innerHTML = `Child Relief: -${child_relief} MMK`;
+
+			let deduct = parseFloat(document.getElementById('deduct').value);
+			let other = document.querySelector('#other');
+			other.innerHTML = `Other deductibles: -${deduct} MMK`;
+
+			let tax = annual-(personal_relief+parent_relief+spouse_relief+child_relief+deduct);
+			let taxable_income = document.querySelector('#taxable_income');
+			taxable_income.innerHTML = `Taxable Income: ${tax} MMK`;
+
+			let title = document.querySelector('#title');
+			title.innerHTML = `Detail`;
+
+			let tbody = document.querySelector('#tbody');
+			let detail = '';
+			let totaltmp = 0;
+			let tax_amount = 0;
+			if(tax > 2000000){
+				detail += `<tr>
+								<th>Description</th>
+								<th>Rate of Accessment Income %</th>
+								<th style="width: 150px;">Taxable</th>
+								<th style="width: 150px;">Tax Payable Amount</th>
+						</tr>
+						<tr>
+							<td>Up to 2,000,000</td>
+							<td>0%</td>
+							<td>2000000 MMK</td>
+							<td>0 MMK</td>
+						</tr>`;
+				totaltmp = tax - 2000000;
+
+				if(totaltmp > 2000000){
+				detail += `<tr>
+							<td>2,000,001 MMK - 5,000,000 MMK</td>
+							<td>5%</td>
+							<td>3000000 MMK</td>
+							<td>150,000 MMK</td>
+						</tr>`;
+				tax_amount += 150000;
+				totaltmp = totaltmp - 3000000;
+
+				if (totaltmp > 5000000) {
+				detail += `<tr>
+							<td>5,000,001 MMK - 10,000,000 MMK</td>
+							<td>10%</td>
+							<td>5000000 MMK</td>
+							<td>500,000 MMK</td>
+						</tr>`
+				tax_amount += 500000;
+				totaltmp = totaltmp - 5000000;	
+
+				if (totaltmp > 10000000) {
+				detail += `<tr>
+							<td>10,000,001 MMK - 20,000,000 MMK</td>
+							<td>15%</td>
+							<td>10,000,000 MMK</td>
+							<td>1,500,000 MMK</td>
+						</tr>`;
+				tax_amount += 1500000;
+				totaltmp = totaltmp - 10000000;		
+
+				if (totaltmp > 10000000) {
+				detail += `<tr>
+							<td>20,000,001 MMK - 30,000,000 MMK</td>
+							<td>20%</td>
+							<td>10,000,000 MMK</td>
+							<td>2,000,000 MMK</td>
+						</tr>`;
+				tax_amount += 2000000;
+				totaltmp = totaltmp - 10000000;
+
+				if (totaltmp > 30000000) {
+				detail += `
+						<tr>
+							<td>Abouve 30,000,001 MMK</td>
+							<td>25%</td>
+							<td>${totaltmp} MMK</td>
+							<td>${totaltmp*0.25} MMK</td>
+						</tr>`
+				tax_amount += totaltmp*0.25;
+				//totaltmp = totaltmp - 10000000;
+			}//< 300lakh
+			else{
+				detail += `
+						<tr>
+							<td>Abouve 30,000,001 MMK</td>
+							<td>25%</td>
+							<td>${totaltmp} MMK</td>
+							<td>${totaltmp*0.25} MMK</td>
+						</tr>`
+				tax_amount += totaltmp*0.25;
+			}
+			
+			}// < 200lakh
+			else{
+					detail += `
+						<tr>
+							<td>20,000,001 MMK - 30,000,000 MMK</td>
+							<td>20%</td>
+							<td>${totaltmp} MMK</td>
+							<td>${totaltmp*0.2} MMK</td>
+						</tr>`
+				tax_amount += totaltmp*0.2;
+				}
+
+				}// < 100lakh
+				else{
+					detail += `
+						<tr>
+							<td>10,000,001 MMK - 20,000,000 MMK</td>
+							<td>15%</td>
+							<td>${totaltmp} MMK</td>
+							<td>${totaltmp*0.15} MMK</td>
+						</tr>`
+				tax_amount += totaltmp*0.15;
+				}
+
+			}// < 50lakh
+				else{
+					detail += `
+						<tr>
+							<td>5,000,001 MMK - 10,000,000 MMK</td>
+							<td>10%</td>
+							<td>${totaltmp} MMK</td>
+							<td>${totaltmp*0.1} MMK</td>
+						</tr>`
+				tax_amount += totaltmp*0.1;
+				}
+
+			}// < 20lakh (-2000000)
+			else{
+				detail += `
+						<tr>
+							<td>2,000,001 MMK - 5,000,000 MMK</td>
+							<td>5%</td>
+							<td>${totaltmp} MMK</td>
+							<td>${totaltmp*0.05} MMK</td>
+						</tr>`
+				tax_amount += totaltmp*0.05;
+			}
+
+		}// < 20lakh
+		else{
+			detail += `<tr>
+								<th>Description</th>
+								<th>Rate of Accessment Income %</th>
+								<th style="width: 150px;">Taxable</th>
+								<th style="width: 150px;">Tax Payable Amount</th>
+						</tr>
+						<tr>
+							<td>Up to 2,000,000 MMK</td>
+							<td>0%</td>
+							<td>0 MMK</td>
+						</tr>`;
+		}
+		detail += `<tr>
+					<th colspan="3"><b>Total Tax</b></th>
+					<td><b>${tax_amount} MMK</b></td>
+					</tr>`;
+			
+		tbody.innerHTML = detail;
+
+		let total_tax = document.querySelector('#total_tax');
+		total_tax.innerHTML = `Total Tax: <b>${tax_amount} MMK</b>`;
+
+		let monthly_tax = document.querySelector('#monthly_tax');
+		monthly_tax.innerHTML = `Monthly Tax: <b>${(tax_amount/12).toFixed(2)} MMK</b>`;
+
+		}
+	</script>
+</head>
+<body>
+	<div style="margin: 20px 350px; border: 1px solid #cfd8dc; width: 50%; padding: 20px; background-color: #cfd8dc; font-size: 18px; border-radius: 15px;">
+	<h1>Myanmar Tax Calculator</h1>
+	<br>
+	<label for="salary">Monthly Salary</label>
+	<input type="number" name="" id="salary">
+	<br><br>
+	<label for="month">Number of Month</label>
+	<input type="number" name="" id="month" readonly="" value="12">
+	<br><br>
+	<fieldset style="width: 50%;">
+		<legend>Family members staying together</legend>
+		<input type="checkbox" name="" id="mother"><label for="mother">Mother</label>
+		<input type="checkbox" name="" id="father"><label for="father">Father</label>
+		<input type="checkbox" name="" id="wife"><label for="wife">Spouse</label>
+	</fieldset>
+	<br><br>
+	<label for="child">No of Children</label>
+	<input type="number" name="" id="child" value="0">
+	<br><br>
+	<label for="deduct">Other deductibles</label>
+	<input type="number" name="" id="deduct" placeholder="(If any)">
+	<br><br>
+	<button type="button" onclick="calcMytax()" style="width: 100px; height: 40px;">Calculate</button>
+	
+	<br><br>
+	<h2 id="result"></h2>
+	<p id="monthly_salary"></p>
+	<p id="annual_salary"></p>
+	<p id="income"></p>
+	<p id="personal"></p>
+	<p id="parent"></p>
+	<p id="spouse"></p>
+	<p id="children"></p>
+	<p id="other"></p>
+	<p id="taxable_income"></p>
+	<p id="total_tax"></p>
+	<p id="monthly_tax"></p>
+
+	<br><br>
+	<h2 id="title"></h2>
+	<table id="tbody" border="1px" cellpadding="10px" cellspacing="0px">
+		
+	</table>
+	</div>
+</body>
+</html>

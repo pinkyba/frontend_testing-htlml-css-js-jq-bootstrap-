@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript">
+
+		// Variable (var)
+		// var - global scope or block scope
+		// 		both redeclared and updated
+
+		var tester = "hey hi";
+    
+    	function newFunction() {
+        	var hello = "hello";
+        	console.log(hello);
+    	}
+    	console.log(tester);
+    	// console.log(hello); //error: hello is undefined coz function scope
+
+    	// var (globally scoped)
+    	var greeting = "say Hi";
+    	if (true) {
+        	var greeting = "say Hello instead";
+        	console.log(greeting); // "say Hello instead"
+    	}
+    	console.log(greeting); // "say Hello instead"
+
+
+
+    	// variable (let)
+    	// let - only function/block scoped
+    	//		cannot redeclare but updated accept
+
+    	let greet = "say Hi";
+    	greet = "say hello"; // update variable
+    	let a; // not initailized value
+    	if (true) {
+        	let greet = "say Hello instead";
+        	console.log(greet); // "say Hello instead"
+    	}
+    	console.log(greet); // "say Hi"
+    	console.log(a); // undefied
+
+
+
+    	// variable (const)
+    	// const - only block scoped
+    	//		   cannot declare and update
+    	//		   must initialize at the time of declaration
+
+    	// *** but in const object, can be updated
+    	const greetingConst = {
+       		message: "say Hi",
+        	times: 4
+    	}
+    	console.log(greetingConst.message);
+
+    	greetingConst.message = "Hola Hola";
+    	console.log(greetingConst.message);
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

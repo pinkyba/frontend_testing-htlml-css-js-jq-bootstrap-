@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar</title>
+
+	<script type="text/javascript">
+		function calendar() {
+			let d = new Date();
+			let current_date = d.getDate();
+			let current_month = d.getMonth();
+			let current_day = d.getDay();
+			let current_year = d.getFullYear();
+			let monthArr = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+			let monthArr_short = ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sep','Oct','Nov','Dec'];
+
+			let firstDay = (new Date(current_year, current_month)).getDay(); // Oct - 9
+			console.log(firstDay);
+
+			// give exact month (eg: October - 10)
+			let noOfDay = new Date(current_year, current_month+1, 0).getDate();
+			console.log(noOfDay);
+
+			let noOfDayOfprevMonth = new Date(current_year, current_month, 0).getDate();
+			console.log(noOfDayOfprevMonth);
+
+			let title = document.querySelector('#title');
+			title.innerHTML = `${monthArr[current_month]} ${current_year} `;
+
+			let tbody = document.querySelector('#tbody');
+			let trList = '';
+
+			for(let i=0; i<6; i++){
+				trList += `<tr>`;
+				for(let j=0; j<7; j++){
+					console.log(i);
+					if(i==0){
+						let remain = noOfDayOfprevMonth - (firstDay-1);
+
+						for(let k=0; k<firstDay; k++){
+							if(k==0){
+								trList += `<td style="background-color: #b0bec5;">${remain}</td>`;
+								remain ++;
+							}else{
+								trList += `<td>${remain}</td>`;
+								remain ++;
+							}							
+						}
+						var startday = 1;
+						for(let a= firstDay; a<7; a++){
+							if(startday == 1){ //to display 1 Oct, 1 Dec , etc
+								if(current_date == startday && (a == 0 || a==6)){
+
+								trList += `<td style="background-color: #b0bec5;"><font style="background-color: #FF0099; border-radius: 8px;">${startday}${monthArr_short[current_month]}</font></td>`;
+								startday ++;
+							}
+							else if(current_date == startday){
+								trList += `<td><font style="background-color: #FF0099; border-radius: 8px;">${startday}${monthArr_short[current_month]}</font></td>`;
+								startday ++;
+							}
+							else if(a ==0 || a==6){
+								trList += `<td style="background-color: #b0bec5;">${startday}${monthArr_short[current_month]}</td>`;
+								startday ++;
+							}
+							else{
+								trList += `<td>${startday}${monthArr_short[current_month]}</td>`;
+								startday ++;
+							}
+							}// startday ==1 loop
+							
+							else{ 
+								if(current_date == startday && (a == 0 || a==6)){
+
+								trList += `<td style="background-color: #b0bec5;"><font style="background-color: #FF0099; border-radius: 8px;">${startday}</font></td>`;
+								startday ++;
+							}
+							else if(current_date == startday){
+								trList += `<td><font style="background-color: #FF0099; border-radius: 8px;">${startday}</font></td>`;
+								startday ++;
+							}
+							else if(a ==0 || a==6){
+								trList += `<td style="background-color: #b0bec5;">${startday}</td>`;
+								startday ++;
+							}
+							else{
+								trList += `<td>${startday}</td>`;
+								startday ++;
+							}
+							}// if not startday of the month loop
+										
+						}// first row loop
+						break;
+					}// first row or not condition
+
+					else{ // not first row
+						if(startday > noOfDay){
+							if(j==0 || j==6){
+								trList += `<td style="background-color: #b0bec5;"></td>`;
+							}else{
+								trList += `<td></td>`;
+							}
+							
+						}
+						else if(current_date == startday && (j == 0 || j==6)){
+							trList += `<td style="background-color: #b0bec5;"><font style="background-color: #FF0099; border-radius: 8px;">${startday}</font></td>`;
+							startday ++;
+						}
+						else if(current_date == startday){
+							trList += `<td><font style="background-color: #FF0099; border-radius: 8px;">${startday}</font></td>`;
+							startday ++;
+						}
+						else if(j==0 || j==6){
+							trList += `<td style="background-color: #b0bec5;">${startday}</td>`;
+							startday = startday +1;
+						}
+						else{
+							trList += `<td>${startday}</td>`;
+							startday = startday +1;
+						}						
+					}
+
+				}//inner loop for col(col = 7)
+
+				trList += `</tr>`;
+
+			}// outer loop for row (row = 6)
+			tbody.innerHTML = trList;
+		}		
+	</script>
+
+</head>
+<body onload="calendar()" style="background-color: #90a4ae;">
+	
+	<h1 id="title" style="color: white;"></h1>
+	<table border="1px" cellpadding="18px" cellspacing="0px" style="font-size: 20px; width: 100%; height: 560px; background-color: #90a4ae ; color: white; border-color:  #b0bec5;">
+		<thead style="">
+			<tr>
+				<th style="background-color: #b0bec5;">Sun</th>
+				<th>Mon</th>
+				<th>Tues</th>
+				<th>Wed</th>
+				<th>Thur</th>
+				<th>Fri</th>
+				<th style="background-color: #b0bec5;">Sat</th>
+			</tr>
+		</thead>
+		<tbody id="tbody" align="right" valign="top">
+			
+		</tbody>	
+	</table>
+	
+</body>
+</html>

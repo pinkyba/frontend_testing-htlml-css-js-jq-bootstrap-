@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animate</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+
+	<style type="text/css">
+		img{position: relative;}
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				//$("img").hide(5000);
+				//$("img").toggle(3000);
+				//$("img").slideUp(3000); //slideDown, slideToggle
+				//$("img").fadeOut(3000); //fadeIn, fadeToggle, fadeTo
+
+				//$("img").animate({left: "250px"});
+
+				$("img").animate({left: '250px'});
+				$("img").animate({top: '250px'});
+				$("img").animate({left: '0'});
+				$("img").animate({top: '0'});
+
+			})
+		})
+	</script>
+</head>
+<body>
+	<img src="a.jpg" width="200" height="150">
+	<br>
+	<button id="btn1">Animate</button>
+</body>
+</html>

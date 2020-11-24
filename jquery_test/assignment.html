@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exam Result</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+			let result = '';
+			var myan = parseInt($("#myan").val());
+			var eng = parseInt($("#eng").val());
+			var math = parseInt($("#math").val());
+			if(myan>=40 && eng >=40 && math>=40){
+				result += 'Congratulation!! You Pass!!<br><br>'
+				if(myan>=80){
+					result += 'Myanmar: D<br><br>';
+				}
+				if(eng>=80){
+					result+= 'English: D<br><br>';
+				}
+				if(math>=80){
+					result += 'Math: D<br><br>';
+				}
+
+			}
+			else{
+				result += 'Sorry !!! You fail.....'
+			}
+			$('h2').html(result);
+			})
+			
+		})
+	</script>
+</head>
+<body>
+	<label for="myan">Myanmar: </label>
+	<input type="text" name="" id="myan">
+	<br><br>
+	<label for="eng">English: </label>
+	<input type="text" name="" id="eng">
+	<br><br>
+	<label for="math">Math: </label>
+	<input type="text" name="" id="math">
+	<br><br>
+	<button>Show result</button>
+
+	<h2></h2>
+</body>
+</html>

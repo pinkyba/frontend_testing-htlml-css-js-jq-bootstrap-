@@ -1,0 +1,37 @@
+
+div#imgdiv img{
+	width: 1320px;
+	height: 65px;
+	margin-left: 10px;
+}
+.bomb{
+	margin-top: 35px;
+	margin-left: 10px;
+}
+
+div.plant{
+	margin: 0px 8px 10px;
+	width: 1320px;
+	border: 1px dotted lightgray;
+}
+
+div.plant div{
+	width: 145px;
+	height: 142px;
+}
+
+div.plant div.bgcolor1{
+	background-color: #06FA47;
+	border: 1px dotted #06D22F;
+}
+
+div.plant div.bgcolor2{
+	background-color: #06D22F;
+	border: 1px dotted #06FA47;
+}
+
+
+div.plant{
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}

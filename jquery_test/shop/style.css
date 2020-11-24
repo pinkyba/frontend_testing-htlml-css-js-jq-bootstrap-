@@ -1,0 +1,121 @@
+
+img{
+	width: 180px;
+	height: 200px;
+}
+
+#tablediv{
+	margin-left: 60px;
+}
+
+#navbar{
+	background-color: lightpink;
+	position: fixed; 
+	top: 0; 
+	width: 100%;
+	height: 60px;
+}
+@font-face {
+  	font-family: myFirstFont;
+  	src: url(DancingScript-VariableFont_wght.ttf);
+}
+#title{
+	font-size: 35px;
+	font-weight: bold;
+	font-family: myFirstFont;
+	margin-top: 10px;
+	margin-left: 45px;
+	color:  #330099 ;
+}
+#addtocart{
+	width: 55px;
+	height: 50px;
+	margin-right: 100px;
+	margin-top: 10px;
+}
+span#count{
+	width: 10px;	
+	border-radius: 60px;
+	padding: 5px 10px;
+	background-color: red;
+	position: absolute;
+	top: 2px;
+	margin-left: 91%;
+	color: white;
+	font-size: 18px;
+}
+
+button{
+	width: 100px;
+	height: 40px;
+	outline: none;
+	background-color: lightpink;
+	border-color:  #ffebee;
+	font-size: 14px;
+	color: darkblue;
+}
+button:hover{
+	background-color: #f06292;
+	color: white;
+	outline: none;
+}
+p{
+	font-size: 18px;
+}
+
+
+#star{
+	background-color:  #fdedec ;
+}
+#itemdiv{
+	margin-top: 100px;
+}
+#emptyItem{
+	color: red;
+	margin: 300px 550px;
+}
+
+div.cartitem {
+	display: flex;
+	width: 60%;
+	margin: 10px 300px;
+	background-color: white;
+	border-radius: 5px;
+}
+#imgdiv{
+	margin-left: 40px;
+	margin-top: 15px;
+}
+#captiondiv{
+	margin-left: 80px;
+	padding: 10px;
+}
+#quantity{
+	width: 18px;
+	text-align: center;
+}
+#btndelete{
+	width: 70px;
+	height: 30px;
+	outline: none;
+	background-color: #FF0066 ;
+	border-color: #FF0066 ;
+	font-size: 14px;
+	color: white;
+}
+#btndelete:hover{
+	background-color:  #FF0000;
+}
+#btncheck{
+	width: 100px;
+	height: 30px;
+	outline: none;
+	background-color:  #0066FF ;
+	border-color:   #0066FF ;
+	font-size: 14px;
+	color: white;
+	margin-left: 4px;
+}
+#btncheck:hover{
+	background-color:  #3300FF;
+}

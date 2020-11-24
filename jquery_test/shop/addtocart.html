@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AddtoCart</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body id="star">
+	<div id="navbar">
+		<font id="title">👶🧡💛 Baby Toy Shopping 💛🧡👩</font>
+		<a href="addtocart.html"><img src="image/add.png" id="addtocart" align="right"></a>
+		<div id="quantity">
+			<span id="count"> <font>0</font> </span>
+		</div>
+	</div>
+
+	<div id="itemdiv">
+		
+	</div>
+
+	<script type="text/javascript" src="../jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			cartnoti();
+			showData();
+
+			function showData(){
+				var html = '';
+				var itemList = localStorage.getItem("item");
+				if(itemList == null){
+					html += `<div id="emptyItem">There is no item in this chart.</div>`
+				}else{
+					var itemArray = JSON.parse(itemList);
+					$.each(itemArray,function(key,value){
+						var subtotal = value.price * value.qty;
+						html += `<div class="cartitem">
+									<div id="imgdiv">
+									<img src="image/${value.img}"></div>
+									<div id="captiondiv">
+									<p> Name: ${value.name}</p>
+									<p> Price: ${value.price} Ks</p>
+									<p> Subtotal: ${subtotal} Ks</p>
+									<input type="submit" value="-" id="btndecrease" data-key=${key}>
+										<input type="type" value="${value.qty}" readOnly="" id="quantity">
+										<input type="submit" value="+" id="btnincrease" data-key=${key}>
+										<p><button id="btndelete" data-key=${key}>Delete</button><button id="btncheck">Check Out</button></p>
+
+									</div>
+								</div>`
+					})
+				}
+				$('#itemdiv').html(html);
+			}
+			
+
+
+			$('#itemdiv').on('click', '#btnincrease', function(){
+				var key = $(this).data("key");
+				
+				var itemList = localStorage.getItem("item");
+				if(itemList){
+					var itemArray = JSON.parse(itemList);
+					$.each(itemArray,function(i,v){
+						if(key == i){
+							v.qty ++;
+						}
+					})
+					var stringItem = JSON.stringify(itemArray);
+					localStorage.setItem("item",stringItem);
+
+					showData();
+					cartnoti();
+
+				}
+			})
+
+			$('#itemdiv').on('click', '#btndecrease', function(){
+
+				var key = $(this).data("key");
+				
+				var itemList = localStorage.getItem("item");
+				if(itemList){
+					var itemArray = JSON.parse(itemList);
+					$.each(itemArray,function(i,v){
+						
+						if(key == i){
+							v.qty --;
+							if(v.qty == 0){
+								alert("Your item count is zero.");
+								itemArray.splice(i,1);
+
+							}
+						}
+						
+					})
+
+					var stringItem = JSON.stringify(itemArray);
+					localStorage.setItem("item",stringItem);
+
+					showData();
+					cartnoti();
+
+				}
+			})
+
+			$('#itemdiv').on('click', '#btndelete', function(){
+				var key = $(this).data("key");
+				
+				var itemList = localStorage.getItem("item");
+				
+				var itemArray = JSON.parse(itemList);
+				$.each(itemArray,function(i,v){
+						
+					if(key == i){
+						itemArray.splice(i,1);	
+					}	
+				})
+
+				var stringItem = JSON.stringify(itemArray);
+				localStorage.setItem("item",stringItem);
+
+				showData();
+				cartnoti();	
+			})
+
+
+			function cartnoti(){
+				var count = 0;
+			var itemList = localStorage.getItem("item");
+			if (itemList != null){
+				itemArray = JSON.parse(itemList);
+				$.each( itemArray, function( key, value ) {
+  					count += value.qty;	
+				});
+				$('#count').html(count);
+			}
+			}
+			
+		})
+	</script>
+</body>
+</html>

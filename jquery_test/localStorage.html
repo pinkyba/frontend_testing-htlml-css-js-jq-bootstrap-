@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Register</title>
+	
+</head>
+<body>
+	<div id="divRegister">
+	<h3>Student Register Form</h3>
+	Name: <input type="text" name="" id="name"><br><br>
+	Age: <input type="text" name="" id="age"><br><br>
+	Address: <input type="text" name="" id="address"><br><br>
+	Gender:<br>
+	Male: <input type="radio" name="gender" value="male">
+	Female: <input type="radio" name="gender" value="Female"><br><br>
+	<button id="btnregister">Register</button>
+	</div>
+
+	<div id="divEdit">
+	<h3>Student Register Edit Form</h3>
+	<input type="hidden" name="" id="myid">
+	Name: <input type="text" name="" id="ename"><br><br>
+	Age: <input type="text" name="" id="eage"><br><br>
+	Address: <input type="text" name="" id="eaddress"><br><br>
+	Gender:<br>
+	Male: <input type="radio" name="gender" value="male" id="emale">
+	Female: <input type="radio" name="gender" value="Female" id="efemale"><br><br>
+	<button id="btnupdate">Update</button>
+	</div>
+
+
+	<div>
+		<h3>Student Table</h3>
+		<table border="1" cellpadding="5px" cellspacing="0px">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Address</th>
+					<th>Gender</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				
+			</tbody>
+			
+		</table>
+	</div>
+
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('#divEdit').hide(); // hide edit form
+
+			showTable(); // to display when browser refresh
+
+			// store student obj array to local storage
+			$('#btnregister').click(function(){
+				var name = $('#name').val();
+				var age = $('#age').val();
+				var address = $('#address').val();
+				var gender = $("input[name='gender']:checked").val();
+
+				var student = {
+						name: name,
+						age: age,
+						address: address,
+						gender: gender
+				}
+				//console.log(student);
+
+				var studentList = localStorage.getItem('student');
+				console.log(typeof studentList); //string type
+
+				var myStudentArray;
+
+				if(studentList == null){
+					myStudentArray = [];
+
+				}else{
+					myStudentArray = JSON.parse(studentList); // change array type
+				}
+
+				myStudentArray.push(student);
+				//console.log(myStudentArray);
+
+				var stringStudent = JSON.stringify(myStudentArray);
+				//console.log(stringStudent);
+
+				localStorage.setItem('student',stringStudent);
+
+				showTable();
+			})
+
+
+			// show data from local storage with table
+			function showTable(){
+				var studentList = localStorage.getItem("student");
+
+				if(studentList){
+					var objStudent = JSON.parse(studentList);
+
+					var j = 1;
+					var html = "";
+
+					//for each (i= key, v = value)
+					$.each(objStudent,function(i,v){
+						
+						html += `<tr>
+								<td>${j++}</td>
+								<td>${v.name}</td>
+								<td>${v.age}</td>
+								<td>${v.address}</td>
+								<td>${v.gender}</td>
+								<td><button data-id="${i}" class="btnEdit">Edit</button><button data-id="${i}" class="btnDelete">Delete</button></td>
+								</tr>`
+					})
+
+					$('#tbody').html(html);
+
+				}
+			}
+
+
+
+			// edit data
+			$('#tbody').on('click', '.btnEdit',function(){ // click edit button in tbody
+
+					$('#divEdit').show();
+					$('#divRegister').hide();
+
+					// get data-id value from button btnEdit
+					var id = $(this).data("id");
+					//console.log(id);
+
+
+					var studentList = localStorage.getItem("student");
+					var objStudent = JSON.parse(studentList);
+
+					var myStudent = objStudent[id];
+
+					var name = myStudent.name;
+					var age = myStudent.age;
+					var address = myStudent.address;
+					var gender = myStudent.gender;
+
+					// parse id with input type hidden
+					$('#myid').val(id);
+
+					$('#ename').val(name);
+					$('#eage').val(age);
+					$('#eaddress').val(address);
+
+					if (gender == "male"){
+						$('#emale').prop('checked', 'checked');
+					}else{
+						$('#efemale').prop('checked', 'checked');
+					}
+
+					
+				})
+
+			$('#btnupdate').click(function(){
+				var id = $('#myid').val();
+
+				var name = $('#ename').val();
+				var age = $('#eage').val();
+				var address = $('#eaddress').val();
+				var gender = $("input[name='gender']:checked").val();
+
+				var student = {
+						name: name,
+						age: age,
+						address: address,
+						gender: gender
+				}
+
+				var studentList = localStorage.getItem('student');
+				var studentArray = JSON.parse(studentList);
+
+				studentArray[id] = student;
+				console.log(studentArray);
+
+				var stringStudent = JSON.stringify(studentArray);
+				localStorage.setItem("student", stringStudent);
+
+				showTable();
+
+			})
+
+			// delete data from local storage
+			$('#tbody').on('click','.btnDelete', function(){
+				var id = $(this).data("id");
+				var studentList = localStorage.getItem('student');
+				var studentArray = JSON.parse(studentList);
+
+				studentArray.splice(id,1);
+				//console.log(staffArray);
+
+				var stringStudent = JSON.stringify(studentArray);
+				//console.log(stringStaff);
+
+				localStorage.setItem("student",stringStudent);
+
+				showTable();
+			})
+		})
+	</script>
+</body>
+</html>
